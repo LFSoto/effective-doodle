@@ -1,5 +1,5 @@
 import { Component, ReactNode } from 'react';
-import Products from './components/Products';
+import Products from './components/Products/Products';
 
 const dummyProducts = [
   { name: 'Tomato', price: 1500, img: '/products/tomate.jpg' }, 
