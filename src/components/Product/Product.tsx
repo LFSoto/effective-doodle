@@ -1,7 +1,7 @@
 interface ProductProps {
-  name?: string;
-  price?: number;
-  img?: string;
+  name: string;
+  price: number;
+  img: string;
 }
 
 const Product = ({ name, price, img }: ProductProps): JSX.Element => {
