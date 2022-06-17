@@ -8,7 +8,7 @@ const App: React.FC = () => {
     { name: 'Lettuce', price: 500, img: '/products/lechuga.jpg' }
   ])
 
-  const addToCart = () => {console.log('No hace nada');};
+  const addToCart = () => {console.log('TODO');};
 
   return (
     <div>
