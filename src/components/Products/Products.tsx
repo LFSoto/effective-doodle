@@ -4,9 +4,17 @@ interface ProductsProps {
   products: Array<any>;
 }
 
+const styles: { [key: string]: React.CSSProperties } = {
+  products:{
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent:'space-between',
+  }
+}
+
 const Products = ({ products }: ProductsProps): JSX.Element => {
   return (
-    <div>
+    <div style={styles.products}>
       {products.map((product: any) => (
         <Product
           key={product.name}
