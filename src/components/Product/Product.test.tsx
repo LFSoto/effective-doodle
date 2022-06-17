@@ -9,12 +9,12 @@ describe('Product component', () => {
       name: 'DummyProduct',
       price: 2000,
       img: '/products/tomate.jpg',
+      addToCart(){},
     };
   });
 
   test('should render all its properties', () => {
-    const {name, price, img} = dummyProduct;
-    render(<Product name={name} price={price} img={img}/>);
+    render(<Product product={dummyProduct} addToCart={dummyProduct.addToCart}/>);
     const nameProperty = screen.getByText('DummyProduct');
     const priceProperty = screen.getByText('2000');
     const imageProperty = screen.getByRole('img');

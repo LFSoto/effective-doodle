@@ -1,8 +1,8 @@
 import Product from '../Product/Product';
 
-interface ProductsProps {
+type ProductsProps = {
   products: Array<any>;
-  addToCart: void;
+  addToCart(product:object): any;
 }
 
 const styles: { [key: string]: React.CSSProperties } = {
@@ -13,11 +13,11 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
 };
 
-const Products = ({ products, addToCart }: ProductsProps): JSX.Element => {
+const Products:React.FC<ProductsProps> = (props) => {
   return (
     <div style={styles.products}>
-      {products.map((product: any) => (
-        <Product key={product.name} product={product} addToCart={addToCart} />
+      {props.products.map((product: any) => (
+        <Product key={product.name} product={product} addToCart={props.addToCart} />
       ))}
     </div>
   );

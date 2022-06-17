@@ -1,13 +1,13 @@
-import Button from './Button'
+import Button from '../Button/Button';
 
-interface ProductProps {
+type ProductProps = {
   product: {
     name: string;
     img: string;
     price: number;
   };
-  addToCart(product:object): void;
-}
+  addToCart(product: object): any;
+};
 
 const styles: { [key: string]: React.CSSProperties } = {
   product: {
@@ -22,7 +22,8 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
 };
 
-const Product = ({ product, addToCart }: ProductProps): JSX.Element => {
+const Product: React.FC<ProductProps> = (props) => {
+  const { product, addToCart } = props;
   return (
     <div style={styles.product}>
       <img alt={product.name} src={product.img} style={styles.img} />
