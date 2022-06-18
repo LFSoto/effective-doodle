@@ -9,6 +9,7 @@ const styles = {
         alignItems: 'center',
         display: 'flex',
         flexDirection:'column' as 'column',
+        fontWeight: 'bold'
     },
     container:{
         width:'1200px'
