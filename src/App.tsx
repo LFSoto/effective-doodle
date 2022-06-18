@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Products from './components/Products/Products';
 import Layout from './components/Layout/Layout';
+import Title from './components/Title/Title';
 
 const App: React.FC = () => {
   const [products, setProducts] = useState([
@@ -16,6 +17,7 @@ const App: React.FC = () => {
   return (
     <div>
       <Layout>
+        <Title></Title>
         <Products products={products} addToCart={addToCart} />
       </Layout>
     </div>
