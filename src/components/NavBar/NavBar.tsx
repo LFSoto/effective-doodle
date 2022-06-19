@@ -1,3 +1,5 @@
+import Logo from '../Logo/Logo';
+
 const styles = {
   navbar: {
     display: 'flex',
@@ -14,7 +16,7 @@ const styles = {
 const NavBar: React.FC = () => {
   return (
     <nav style={styles.navbar}>
-      <p>Logo</p>
+      <Logo/>
       <p>Cart</p>
     </nav>
   );
