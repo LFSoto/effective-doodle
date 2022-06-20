@@ -1,4 +1,9 @@
 import Logo from '../Logo/Logo';
+import Cart from '../Cart/Cart';
+
+type NavBarProps = {
+  amount: number
+}
 
 const styles = {
   navbar: {
@@ -13,11 +18,13 @@ const styles = {
   },
 };
 
-const NavBar: React.FC = () => {
+const NavBar: React.FC<NavBarProps> = (navBarProps) => {
+  const {amount} = navBarProps;  
+
   return (
     <nav style={styles.navbar}>
       <Logo/>
-      <p>Cart</p>
+      <Cart amount={amount}/>
     </nav>
   );
 };
