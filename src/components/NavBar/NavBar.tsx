@@ -1,4 +1,5 @@
 import Logo from '../Logo/Logo';
+import Cart from '../Cart/Cart';
 
 const styles = {
   navbar: {
@@ -17,7 +18,7 @@ const NavBar: React.FC = () => {
   return (
     <nav style={styles.navbar}>
       <Logo/>
-      <p>Cart</p>
+      <Cart/>
     </nav>
   );
 };
