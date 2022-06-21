@@ -2,7 +2,7 @@ import Logo from '../Logo/Logo';
 import Cart from '../Cart/Cart';
 
 type NavBarProps = {
-  amount: number
+  cart: Array<any>
 }
 
 const styles = {
@@ -19,12 +19,12 @@ const styles = {
 };
 
 const NavBar: React.FC<NavBarProps> = (navBarProps) => {
-  const {amount} = navBarProps;  
+  const {cart} = navBarProps;  
 
   return (
     <nav style={styles.navbar}>
       <Logo/>
-      <Cart amount={amount}/>
+      <Cart cart={cart}/>
     </nav>
   );
 };

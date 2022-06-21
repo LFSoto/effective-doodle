@@ -1,8 +1,8 @@
 import BubbleAlert from '../BubbleAlert/BubbleAlert';
 
 type CartProps = {
-    amount: number
- }
+  cart: Array<any>;
+};
 
 const styles = {
   cart: {
@@ -21,10 +21,11 @@ const styles = {
 };
 
 const Cart: React.FC<CartProps> = (cartProps) => {
+  const amount = cartProps.cart.reduce((acc, el) => acc + el.amount, 0);
   return (
     <div>
       <span style={styles.bubble}>
-        <BubbleAlert value={10}/>
+        {amount !== 0 ? <BubbleAlert value={amount} /> : null}
       </span>
 
       <button style={styles.cart}>Cart</button>
