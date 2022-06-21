@@ -11,30 +11,31 @@ const App: React.FC = () => {
       { name: 'Peas', price: 2500, img: '/products/arbejas.jpg' },
       { name: 'Lettuce', price: 500, img: '/products/lechuga.jpg' },
     ],
-    cart: [],
-    setState(product: object): void {},
   };
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState<any>([]);
+  const [cartIsVisible, setCartIsVisible] = useState(false);
 
-  // const addToCart = (product: object) => {
-  //   console.log(state.cart);
+  const addToCart = (product: any) => {
+    if (cart.find((element: any) => element.name === product.name)) {
+      const newCart = cart.map((element: any) =>
+        element.name === product.name
+          ? { ...element, amount: element.amount + 1 }
+          : element
+      );
+      return setCart(newCart);
+    } else {
+      return setCart(cart.concat({ ...product, amount: 1 }));
+    }
+  };
 
-  //   return state.setState({
-  //     cart: state.cart.concat({
-  //       ...product,
-  //       amount: 1,
-  //     }),
-  //   });
-  // };
-
-  const addToCart = (product: object) => {
-    //setCart([state.cart.concat({ ...product, amount: 1 })]);
+  const showCart = () => {
+    setCartIsVisible(!cartIsVisible);
   };
 
   return (
     <div>
-      <NavBar amount={12} />
+      <NavBar cart={cart} showCart={showCart} cartIsVisible={cartIsVisible}/>
       <Layout>
         <Title />
         <Products products={state.products} addToCart={addToCart} />

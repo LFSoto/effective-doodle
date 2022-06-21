@@ -1,8 +1,11 @@
 import BubbleAlert from '../BubbleAlert/BubbleAlert';
+import CartLayout from '../CartLayout/CartLayout';
 
 type CartProps = {
-    amount: number
- }
+  cart: Array<any>;
+  showCart(): void;
+  cartIsVisible: boolean;
+};
 
 const styles = {
   cart: {
@@ -21,13 +24,15 @@ const styles = {
 };
 
 const Cart: React.FC<CartProps> = (cartProps) => {
+  const { cart, cartIsVisible, showCart } = cartProps;
+  const amount = cart.reduce((acc, el) => acc + el.amount, 0);
   return (
     <div>
       <span style={styles.bubble}>
-        <BubbleAlert value={10}/>
+        {amount !== 0 ? <BubbleAlert value={amount} /> : null}
       </span>
-
-      <button style={styles.cart}>Cart</button>
+      <button style={styles.cart} onClick={showCart}>Cart</button>
+      {cartIsVisible ? <CartLayout cart={cartProps.cart} /> : null}
     </div>
   );
 };
