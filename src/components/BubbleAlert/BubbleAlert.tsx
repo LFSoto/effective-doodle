@@ -1,5 +1,5 @@
 type BubbleAlerProps = {
-  value: number;
+  value?: number;
 };
 
 const styles = {
@@ -14,16 +14,17 @@ const styles = {
 };
 
 const BubbleAlert: React.FC<BubbleAlerProps> = (props) => {
+  const { value } = props;
+
   const getNumber: any = (amount: number) => {
+    /* istanbul ignore else*/
     if (!amount) {
       return '';
     }
     return amount > 9 ? '9+' : amount;
   };
 
-  const { value } = props;
-
-  return <span style={styles.bubbleAlert}>{getNumber(value)}</span>;
+  return <span style={styles.bubbleAlert} id="bubbleAlert">{getNumber(value)}</span>;
 };
 
 export default BubbleAlert;
