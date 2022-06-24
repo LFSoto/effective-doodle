@@ -3,6 +3,7 @@ import Products from './components/Products/Products';
 import Layout from './components/Layout/Layout';
 import Title from './components/Title/Title';
 import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 
 const App: React.FC = () => {
   const state = {
@@ -40,6 +41,7 @@ const App: React.FC = () => {
         <Title />
         <Products products={state.products} addToCart={addToCart} />
       </Layout>
+      <Footer/>
     </div>
   );
 };
