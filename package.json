@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cross-env CI=true react-scripts test --coverage",
+    "test": "react-scripts test --ci --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
